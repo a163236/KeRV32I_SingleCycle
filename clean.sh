@@ -1,5 +1,10 @@
 #!/usr/bin/bash
 
+// targetファイル削除
+for i in $(find target);do
+  rm $i -rf
+done
+
 // firファイル消去
 for i in $(find *.fir);do
     rm $i
