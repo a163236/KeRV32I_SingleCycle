@@ -56,4 +56,8 @@ class Core(implicit val conf: Configurations) extends Module{
   // メモリ初期化処理
   Cpath.io.meminit.wantInit := io.meminit.wantInit
   io.meminit.initOK := Cpath.io.meminit.initOK
+
+  // debug
+  io.debug.reg_a0 := Dpath.io.debug.reg_a0
+
 }

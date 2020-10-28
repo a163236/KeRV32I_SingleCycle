@@ -37,6 +37,7 @@ class riscvtest extends FlatSpec with ChiselScalatestTester with Matchers{
         c.clock.step(1)
         println()
       }
+      println(c.io.debug.reg_a0.peek())
       c.io.debug.reg_a0.expect(0.U) // gpレジスタが1ならパス
     }
   }
@@ -45,6 +46,7 @@ class riscvtest extends FlatSpec with ChiselScalatestTester with Matchers{
   behavior of "rv32ui-"
   val rv32ui_path = "testfolder/hexfile/rv32ui/"
 
+  "temp_keita" should "pass" in {entrymemory(rv32ui_path+"temp_keita.hex")}
   "add" should "pass" in {entrymemory(rv32ui_path+"rv32ui-p-add.hex")}
   "addi" should "pass" in {entrymemory(rv32ui_path+"rv32ui-p-addi.hex")}
   "and" should "pass" in {entrymemory(rv32ui_path+"rv32ui-p-and.hex")}
